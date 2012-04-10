@@ -19,7 +19,7 @@ $(NAME)_weibo.tex : $(NAME).tex $(SRC)
 $(PDFTARGET_W) : $(NAME)_weibo.tex  $(SRC)
 	$(PT) $< 
 clean : 
-	rm -f *.log *.out *.pdf *.dvi *.aux $(NAME)_weibo.tex
+	rm -f *.log *.out *.pdf *.dvi *.aux $(NAME)_weibo.tex 
 %.dvi : %.tex
 	$(LT) $<
 %.pdf : %.tex
@@ -27,7 +27,6 @@ clean :
 s : $(PDFTARGET)
 	if [ -e $(NAME).pdf ] ;then	evince $(NAME).pdf ;	fi
 	if [ -e $(NAME).dvi ] ;then 	evince $(NAME).dvi ;	fi
-	cp $(NAME).tex $(NAME).tex_back
 sw: $(PDFTARGET_W)
 	if [ -e $(NAME)_weibo.pdf ] ;then     evince $(NAME)_weibo.pdf ;    fi
 	if [ -e $(NAME)_weibo.dvi ] ;then     evince $(NAME)_weibo.dvi ;    fi
